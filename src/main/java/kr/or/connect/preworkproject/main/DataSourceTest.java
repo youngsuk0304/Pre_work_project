@@ -18,7 +18,7 @@ public class DataSourceTest {
 		try {//접속이 잘되는지 확인
 			conn = ds.getConnection();
 			if(conn != null)
-				System.out.println("접속 성공^^");
+				System.out.println("접속 성공");
 		}catch (Exception e) {
 			e.printStackTrace();
 		}finally {
