@@ -5,7 +5,7 @@ public class Member {
 	private String name;
 	private String gender;
 	private int age;
-	
+
 	public String getId() {
 		return id;
 	}

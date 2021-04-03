@@ -2,21 +2,20 @@ package kr.or.connect.preworkproject.dto;
 
 public class Parcel {
 	private int id;
-	private String adress;
+	private String address;
 	private String geometry;
-	private int pnu;
-	
+	private String pnu;
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
 	}
-	public String getAdress() {
-		return adress;
+	public String getAddress() {
+		return address;
 	}
-	public void setAdress(String adress) {
-		this.adress = adress;
+	public void setAddress(String address) {
+		this.address = address;
 	}
 	public String getGeometry() {
 		return geometry;
@@ -24,16 +23,17 @@ public class Parcel {
 	public void setGeometry(String geometry) {
 		this.geometry = geometry;
 	}
-	public int getPnu() {
+	public String getPnu() {
 		return pnu;
 	}
-	public void setPnu(int pnu) {
+	public void setPnu(String pnu) {
 		this.pnu = pnu;
 	}
 	@Override
 	public String toString() {
-		return "Parcel [id=" + id + ", adress=" + adress + ", geometry=" + geometry + ", pnu=" + pnu + "]";
+		return "Parcel [id=" + id + ", address=" + address + ", geometry=" + geometry + ", pnu=" + pnu + "]";
 	}
-	
-	
+
+
+
 }

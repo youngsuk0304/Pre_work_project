@@ -13,7 +13,7 @@ public class DataSourceTest {
 	public static void main(String[] args) {
 		ApplicationContext ac = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 		DataSource ds = ac.getBean(DataSource.class);
-		
+
 		Connection conn = null;
 		try {//접속이 잘되는지 확인
 			conn = ds.getConnection();
