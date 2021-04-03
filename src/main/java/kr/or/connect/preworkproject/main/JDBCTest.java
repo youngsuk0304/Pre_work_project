@@ -35,7 +35,7 @@ public class JDBCTest {
 		//selectByPnu
 		Parcel resultParcel = parcelDao.selectByPnu("1168010800102420001");
 		System.out.println(resultParcel);
-
+		System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
 		//selectByAddress
 		List<Parcel> list = parcelDao.selectByAddress("서울 강남구 논현동");
 

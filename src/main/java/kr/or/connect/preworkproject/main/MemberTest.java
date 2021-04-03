@@ -16,14 +16,14 @@ public class MemberTest {
 		MemberDao memberDao = ac.getBean(MemberDao.class);
 
 
-		///insert
-		//Member member = new Member();
-		//member.setId("123@123.com");
-		//member.setName("서영석");
-		//member.setGender("man");
-		//member.setAge(29);
-		//int count = memberDao.insert(member);
-		//System.out.println(count + "건 입력하였습니다.");
+		//insert
+		Member member = new Member();
+		member.setId("123@123.com");
+		member.setName("서영석");
+		member.setGender("man");
+		member.setAge(29);
+		int count = memberDao.insert(member);
+		System.out.println(count + "건 입력하였습니다.");
 
 		//SELECTBYID
 		//Member resultMember = memberDao.selectById("123@123.com");
