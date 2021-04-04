@@ -16,7 +16,7 @@
 - 코드의 Readability
 - 옵션) 테스트가 용이한가?
 
-## 기
+## 기술 
 - 사용언어 : Java
 - DB : MySQL을 사용
 - 사용한 오픈 소스 : spring  
