@@ -31,5 +31,6 @@
 
 - 즐겨찾기를 선택시 : '즐겨찾기를 사용중인 유저조회', '사용자의 즐겨찾기 추가', '사용자가 즐겨찾기한 필지 조회', '사용자가 즐겨찾기한 필지 제거'가 있으며 즐겨찾기는 member_id(FK)와 parcel_id(FK)로 되어 있습니다.
 
-- 마지막으로 필지를 선택시 : '전체 필지 조회', '필지 추가', 'PNU값으로 필지조회', 'Adress값으로 필지검색'이 가능하며 필지는 id(PK), address, geometry, pnu(UQ) 정보를 가집니다.
+- 필지를 선택시 : '전체 필지 조회', '필지 추가', 'PNU값으로 필지조회', 'Adress값으로 필지검색'이 가능하며 필지는 id(PK), address, geometry, pnu(UQ) 정보를 가집니다.
 
+- 마지막으로 필지데이터는 kr.or.connect.preworkproject.JsonData의 ParcelJsonData.java 에서 파싱하여 데이터를 추가할 수 있도록 만들었습니다.
