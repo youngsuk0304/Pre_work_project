@@ -34,9 +34,9 @@ public class FavoriteDao {
 	}
 
 	//즐겨찾기 추가
-	public int insert(Favorite favorite) {
+	public void insert(Favorite favorite) {
 		SqlParameterSource params = new BeanPropertySqlParameterSource(favorite);
-		return insertAction.execute(params);
+		insertAction.execute(params);
 	}
 	//즐겨찾기 목록
 	//SELECT_All
@@ -60,6 +60,7 @@ public class FavoriteDao {
 		SqlParameterSource params = new BeanPropertySqlParameterSource(favorite);
 		return jdbc.update(DELETE_FAVORITE, params);
 	}
+	
 //	public int deleteById(Integer id) {
 //		Map<String, ?> params = Collections.singletonMap("roleId", id);
 //		return jdbc.update(DELETE_BY_ROLE_ID, params);

@@ -25,14 +25,15 @@ public class MemberTest {
 	//SELECT_ALL
 	public static void memberSelectAll() {
 		List<Member> list = memberDao.selectAll();
-		for(Member member: list) {
-			System.out.println(member);
+		for(Member member1: list) {
+			System.out.println(member1);
 		}
 	}
 	//SELECT_BY_ID
 	public static void memberSelectByMemberId(String id) {
 		
 		Member resultMember = memberDao.selectById(id);
+		
 		System.out.println(resultMember);
 	}
 	//DELETE_BY_ID

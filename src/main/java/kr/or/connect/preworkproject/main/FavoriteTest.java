@@ -7,19 +7,23 @@ import org.springframework.context.annotation.AnnotationConfigApplicationContext
 
 import kr.or.connect.preworkproject.config.ApplicationConfig;
 import kr.or.connect.preworkproject.dao.FavoriteDao;
+import kr.or.connect.preworkproject.dao.MemberDao;
 import kr.or.connect.preworkproject.dto.Favorite;
+import kr.or.connect.preworkproject.dto.Member;
+import kr.or.connect.preworkproject.dto.Parcel;
 
 public class FavoriteTest {
 	static ApplicationContext ac = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 
 	static FavoriteDao favoriteDao = ac.getBean(FavoriteDao.class);
-	
+	static MemberDao memberDao = ac.getBean(MemberDao.class);
 	//SELECT_ALL
 	public static void favoriteSelectAll() {
 		List<Favorite> list = favoriteDao.selectAll();
 		for(Favorite favorite: list) {
-			System.out.println(favorite);
+			System.out.println(favorite.getMember_id());
 		}
+		
 	}
 	//INSERT
 	public static void favoriteInsert(String member_id,int parcel_id) {
@@ -33,9 +37,8 @@ public class FavoriteTest {
 	public static void favoriteSelectFavorite(String member_id) {
 
 		List<Favorite> resultFavorite = favoriteDao.selectFavorite(member_id);
-		System.out.println(resultFavorite);
 		for(Favorite favorite: resultFavorite) {
-			System.out.println(favorite);
+			System.out.println(favorite.getParcel_id());
 		}
 	}
 	//DELETE_FAVORITE

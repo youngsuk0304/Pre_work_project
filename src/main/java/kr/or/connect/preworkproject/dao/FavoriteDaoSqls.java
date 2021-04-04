@@ -7,4 +7,5 @@ public class FavoriteDaoSqls {
 	public static final String SELECT_FAVORITE  = "SELECT parcel_id FROM tbl_favorite where member_id=:member_id";
 	//mem_id와 parcel_id가 둘다 주어질때 제거
 	public static final String DELETE_FAVORITE = "DELETE FROM tbl_favorite WHERE member_id=:member_id and parcel_id =:parcel_id";
+	
 }
