@@ -1,5 +1,4 @@
 package kr.or.connect.preworkproject.main;
-import java.util.Collections;
 import java.util.List;
 
 import org.springframework.context.ApplicationContext;
@@ -11,46 +10,41 @@ import kr.or.connect.preworkproject.dao.FavoriteDao;
 import kr.or.connect.preworkproject.dto.Favorite;
 
 public class FavoriteTest {
-	public static void main(String[] args) {
-		ApplicationContext ac = new AnnotationConfigApplicationContext(ApplicationConfig.class);
+	static ApplicationContext ac = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 
-		FavoriteDao favoriteDao = ac.getBean(FavoriteDao.class);
-
-
-		///insert
-		//Favorite favorite = new Favorite();
-		//favorite.setMember_id("123@123.com");
-		//favorite.setParcel_id(28);
-		//int count = favoriteDao.insert(favorite);
-		//System.out.println(count + "건 입력하였습니다.");
-		
-		//SELECT_ALL
+	static FavoriteDao favoriteDao = ac.getBean(FavoriteDao.class);
+	
+	//SELECT_ALL
+	public static void favoriteSelectAll() {
 		List<Favorite> list = favoriteDao.selectAll();
-		
-		for(Favorite favorite1: list) {
-			
-			System.out.println(favorite1);
+		for(Favorite favorite: list) {
+			System.out.println(favorite);
 		}
-		System.out.println("aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa");
-		//SELECT_FAVORITE
-		List<Favorite> resultFavorite = favoriteDao.selectFavorite("123@123.com");
+	}
+	//INSERT
+	public static void favoriteInsert(String member_id,int parcel_id) {
+		Favorite favorite = new Favorite();
+		favorite.setMember_id(member_id);
+		favorite.setParcel_id(parcel_id);
+		favoriteDao.insert(favorite);
+		System.out.println("member_id : "+member_id+"사용자에게 parcel_id : "+parcel_id+"를 즐겨찾기 하였습니다.");
+	}
+	//SELECT_FAVORITE
+	public static void favoriteSelectFavorite(String member_id) {
+
+		List<Favorite> resultFavorite = favoriteDao.selectFavorite(member_id);
 		System.out.println(resultFavorite);
-		for(Favorite favorite1: resultFavorite) {
-			
-			System.out.println(favorite1);
+		for(Favorite favorite: resultFavorite) {
+			System.out.println(favorite);
 		}
-		//DELETE_FAVORITE
-//		Favorite favorite = new Favorite();
-//		favorite.setMember_Id("123@123.com");
-//		favorite.setParcel_id(30);
-//		
-//		int count = memberDao.update(member);
-//		System.out.println(count + "건 삭제하였습니다.");
-
-
-		//DELETE
-//		int deleteCount=memberDao.deleteById("123@123.com");
-//		System.out.println(deleteCount+"건 삭제하였습니다.");
-
+	}
+	//DELETE_FAVORITE
+	public static void favoriteDeletetFavorite(String member_id,int parcel_id) {
+		Favorite favorite = new Favorite();
+		favorite.setMember_id(member_id);
+		favorite.setParcel_id(parcel_id);
+		
+		favoriteDao.deleteFavorite(favorite);
+		System.out.println("id : "+member_id+" 사용자의 parcel : " +parcel_id+ "를 삭제하였습니다.");
 	}
 }

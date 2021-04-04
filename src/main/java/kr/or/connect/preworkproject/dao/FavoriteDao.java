@@ -60,4 +60,8 @@ public class FavoriteDao {
 		SqlParameterSource params = new BeanPropertySqlParameterSource(favorite);
 		return jdbc.update(DELETE_FAVORITE, params);
 	}
+//	public int deleteById(Integer id) {
+//		Map<String, ?> params = Collections.singletonMap("roleId", id);
+//		return jdbc.update(DELETE_BY_ROLE_ID, params);
+//	}
 }

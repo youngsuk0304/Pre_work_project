@@ -1,11 +1,11 @@
 package kr.or.connect.preworkproject.JsonData;
-import java.io.FileReader;
-import java.util.Iterator;
 
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
+
+import kr.or.connect.preworkproject.main.ParcelTest;
 
 public class ParcelJsonData {
 	public static void main(String[] args) throws ParseException {
@@ -28,18 +28,23 @@ public class ParcelJsonData {
 	        		JSONParser parser = new JSONParser();
 	        		JSONObject jsonObj = (JSONObject) parser.parse(jsonStr);
 	        		JSONArray memberArray = (JSONArray) jsonObj.get("parcel");
-
+	        		ParcelTest pt=new ParcelTest();
 	        		for(int i=0;i<memberArray.size();i++) {
+	        			int k=10;
 	        			JSONObject tempObj=(JSONObject) memberArray.get(i);
-	        			System.out.println("id : "+tempObj.get("id"));
-	        			System.out.println("address :"+tempObj.get("address"));
-	        			System.out.println("geometry :"+tempObj.get("geometry"));
-	        			System.out.println("pnu :"+tempObj.get("pnu"));
+	        			int Id=Integer.parseInt(tempObj.get("id").toString());
+	        			String Address=tempObj.get("address").toString();
+	        			String Geometry=tempObj.get("geometry").toString();
+	        			String Pnu=tempObj.get("pnu").toString();	
+	        			System.out.println("id : "+Id);
+	        			System.out.println("address : "+Address);
+	        			System.out.println("geometry : "+Geometry);
+	        			System.out.println("pnu : "+Pnu);
 	        			System.out.println("--------------------------------");
+	        			pt.parcelAdd(Id, Address, Geometry, Pnu);	
 	        		}
 	        }catch (Exception e) {
 				// TODO: handle exception
 			}
-
 	    }
 }
