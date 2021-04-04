@@ -22,7 +22,7 @@
 - 사용한 오픈 소스 : spring  
 - Eclipce에서 Maven으로 프로젝트 빌드
 
-## 요구 사항에 따른 코드 설명
+## 요구 사항에 따른 설명
 코드의 시작은 kr.or.connect.preworkproject.main의 mainTest.java에서 실행할 수 있습니다.
 
 코드 실행시 사용자, 즐겨찾기 필지와 관련하여 3가지로 선택 가능합니다.
