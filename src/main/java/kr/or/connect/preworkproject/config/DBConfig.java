@@ -11,19 +11,19 @@ import org.springframework.transaction.annotation.EnableTransactionManagement;
 @EnableTransactionManagement
 public class DBConfig {
 	private String driverClassName = "com.mysql.jdbc.Driver";
-    private String url = "jdbc:mysql://localhost:3306/spacewalkdb?useUnicode=true&characterEncoding=utf8";
+	private String url = "jdbc:mysql://localhost:3306/spacewalkdb?useUnicode=true&characterEncoding=utf8";
 
-    private String username = "spacewalkys";
-    private String password = "ys0304@";
+	private String username = "spacewalkys";
+	private String password = "ys0304@";
 
-    @Bean
-    public DataSource dataSource() {
-    	BasicDataSource dataSource = new BasicDataSource();
-        dataSource.setDriverClassName(driverClassName);
-        dataSource.setUrl(url);
-        dataSource.setUsername(username);
-        dataSource.setPassword(password);
-        return dataSource;
+	@Bean
+	public DataSource dataSource() {
+		BasicDataSource dataSource = new BasicDataSource();
+		dataSource.setDriverClassName(driverClassName);
+		dataSource.setUrl(url);
+		dataSource.setUsername(username);
+		dataSource.setPassword(password);
+		return dataSource;
 
-    }
+	}
 }
