@@ -36,4 +36,6 @@
 - 마지막으로 필지데이터는 kr.or.connect.preworkproject.JsonData의 ParcelJsonData.java 에서 파싱하여 데이터를 추가할 수 있도록 만들었습니다.
 
 DataBase 스키마
+
+
 ![Spacewalk_DB](https://user-images.githubusercontent.com/33721972/113986169-e67eab00-9887-11eb-9658-719d958aa234.png)
