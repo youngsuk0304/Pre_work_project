@@ -10,11 +10,12 @@ import kr.or.connect.preworkproject.dao.MemberDao;
 import kr.or.connect.preworkproject.dto.Member;
 
 public class MemberTest {
-	
+
 	static ApplicationContext ac = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 	static MemberDao memberDao = ac.getBean(MemberDao.class);
-	//Insert
-	public static void memberInsert(String id,String name, String gender, int age) {
+
+	// Insert
+	public static void memberInsert(String id, String name, String gender, int age) {
 		Member member = new Member();
 		member.setId(id);
 		member.setName(name);
@@ -22,24 +23,27 @@ public class MemberTest {
 		member.setAge(age);
 		memberDao.insert(member);
 	}
-	//SELECT_ALL
+
+	// SELECT_ALL
 	public static void memberSelectAll() {
 		List<Member> list = memberDao.selectAll();
-		for(Member member1: list) {
+		for (Member member1 : list) {
 			System.out.println(member1);
 		}
 	}
-	//SELECT_BY_ID
+
+	// SELECT_BY_ID
 	public static void memberSelectByMemberId(String id) {
-		
+
 		Member resultMember = memberDao.selectById(id);
-		
+
 		System.out.println(resultMember);
 	}
-	//DELETE_BY_ID
+
+	// DELETE_BY_ID
 	public static void memberDeleteByMemberId(String id) {
 		memberDao.deleteById(id);
-		System.out.println("id = "+id+"인 사용자를 삭제하였습니다.");
+		System.out.println("id = " + id + "인 사용자를 삭제하였습니다.");
 	}
 //UPDATE
 //	Member member = new Member();

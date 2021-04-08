@@ -31,39 +31,43 @@ public class MemberDao {
 
 	public MemberDao(DataSource dataSource) {
 		this.jdbc = new NamedParameterJdbcTemplate(dataSource);
-		this.insertAction = new SimpleJdbcInsert(dataSource)
-                .withTableName("tbl_member");
+		this.insertAction = new SimpleJdbcInsert(dataSource).withTableName("tbl_member");
 	}
-	//INSERT
+
+	// INSERT
 	public int insert(Member member) {
 		SqlParameterSource params = new BeanPropertySqlParameterSource(member);
 		return insertAction.execute(params);
 	}
-	//SELECT_All
-	public List<Member> selectAll(){
-		return jdbc.query(SELECT_ALL, Collections.emptyMap(),rowMapper);
-		//query(sql문, 바인딩할 값을 전달하기위한 객체, 결과를 dto저장);
+
+	// SELECT_All
+	public List<Member> selectAll() {
+		return jdbc.query(SELECT_ALL, Collections.emptyMap(), rowMapper);
+		// query(sql문, 바인딩할 값을 전달하기위한 객체, 결과를 dto저장);
 	}
-	//SECECT_BY_MEMBER_ID
+
+	// SECECT_BY_MEMBER_ID
 	public Member selectById(String id) {
 		try {
 			Map<String, ?> params = Collections.singletonMap("id", id);
-			return jdbc.queryForObject(SELECT_BY_MEMBER_ID, params, rowMapper);		
-		}catch(EmptyResultDataAccessException e) {
+			return jdbc.queryForObject(SELECT_BY_MEMBER_ID, params, rowMapper);
+		} catch (EmptyResultDataAccessException e) {
 			return null;
 		}
 	}
-	//UPDATE
+
+	// UPDATE
 	public int update(Member member) {
 		SqlParameterSource params = new BeanPropertySqlParameterSource(member);
 		return jdbc.update(UPDATE, params);
 	}
-	//DELETE_BY_MEMBER_ID
-	public int deleteById(String id) {//값이 여러개 들어가지 않고 하나만 들어갈때 사용 가능
-		Map<String,?> params = Collections.singletonMap("id",id);
+
+	// DELETE_BY_MEMBER_ID
+	public int deleteById(String id) {// 값이 여러개 들어가지 않고 하나만 들어갈때 사용 가능
+		Map<String, ?> params = Collections.singletonMap("id", id);
 		return jdbc.update(DELETE_BY_MEMBER_ID, params);
 	}
-	//EXITS_MEMBER_ID
+	// EXITS_MEMBER_ID
 //	public Member exitsMemberId(String id) {
 //		
 //		

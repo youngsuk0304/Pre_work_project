@@ -15,17 +15,17 @@ public class DataSourceTest {
 		DataSource ds = ac.getBean(DataSource.class);
 
 		Connection conn = null;
-		try {//접속이 잘되는지 확인
+		try {// 접속이 잘되는지 확인
 			conn = ds.getConnection();
-			if(conn != null)
+			if (conn != null)
 				System.out.println("접속 성공");
-		}catch (Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
-			if(conn != null) {
+		} finally {
+			if (conn != null) {
 				try {
 					conn.close();
-				}catch (Exception e) {
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 			}
