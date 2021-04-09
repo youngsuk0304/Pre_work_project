@@ -36,6 +36,7 @@
 - 마지막으로 필지데이터는 kr.or.connect.preworkproject.JsonData의 ParcelJsonData.java 에서 파싱하여 데이터를 추가할 수 있도록 만들었습니다.
 
 DBconfiguration
+
 DB이름 : 'spacewalkdb'
 username : 'spacewalkys'
 password : 'ys0304@' 
