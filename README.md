@@ -46,6 +46,6 @@ password : 'ys0304@'
 로 설정 
 
 
-DataBase 스키마
+# DataBase 스키마
 
 ![Spacewalk_DB](https://user-images.githubusercontent.com/33721972/113986169-e67eab00-9887-11eb-9658-719d958aa234.png)
