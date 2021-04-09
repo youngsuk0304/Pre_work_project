@@ -9,7 +9,7 @@ import kr.or.connect.preworkproject.config.ApplicationConfig;
 import kr.or.connect.preworkproject.dao.MemberDao;
 import kr.or.connect.preworkproject.dto.Member;
 
-public class MemberTest {
+public class MemberPart {
 
 	static ApplicationContext ac = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 	static MemberDao memberDao = ac.getBean(MemberDao.class);

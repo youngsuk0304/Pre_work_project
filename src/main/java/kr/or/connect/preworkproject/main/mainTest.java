@@ -53,11 +53,12 @@ public class mainTest {
 			if (member_num == 1) {
 				// SELECT_ALL
 				System.out.println("--사용자 전체 조회--");
-				MemberTest.memberSelectAll();
+				MemberPart.memberSelectAll();
 			} else if (member_num == 2) {
 				// INSERT
 				char first_char;
 				char last_char;
+				
 				System.out.println("--사용자 추가--");
 				System.out.println("사용자 정보 입력");
 				System.out.println("사용자 id(이메일) : ");
@@ -74,20 +75,20 @@ public class mainTest {
 				gender = sc.nextLine();
 				System.out.println("나이 : ");
 				age = sc.nextInt();
-				MemberTest.memberInsert(member_id, name, gender, age);
+				MemberPart.memberInsert(member_id, name, gender, age);
 				System.out.println("추가하였습니다.");
 			} else if (member_num == 3) {
 				// SELECT_BY_MEMBER_ID
 				System.out.println("--id로 사용자 조회--");
 				System.out.println("사용자 id 입력 : ");
 				member_id = sc.nextLine();
-				MemberTest.memberSelectByMemberId(member_id);
+				MemberPart.memberSelectByMemberId(member_id);
 			} else if (member_num == 4) {
 				// DELETE_BY_MEMBER_ID
 				System.out.println("--id로 사용자 제거--");
 				System.out.println("사용자 id 입력 : ");
 				member_id = sc.nextLine();
-				MemberTest.memberDeleteByMemberId(member_id);
+				MemberPart.memberDeleteByMemberId(member_id);
 			} else if (member_num == 5) {
 				break;
 			} else
@@ -110,7 +111,7 @@ public class mainTest {
 			sc.nextLine();
 			if (favorite_num == 1) {
 				System.out.println("--즐겨찾기를 사용하는 유저조회--");
-				FavoriteTest.favoriteSelectAll();
+				FavoritePart.favoriteSelectAll();
 			} else if (favorite_num == 2) {
 				System.out.println("--즐겨찾기 추가--");
 				System.out.println("사용자 id 입력 : ");
@@ -118,19 +119,19 @@ public class mainTest {
 				System.out.println("즐겨찾기할 필지 id 입력");
 				parcel_id = sc.nextInt();
 				sc.nextLine();
-				FavoriteTest.favoriteInsert(member_id, parcel_id);
+				FavoritePart.favoriteInsert(member_id, parcel_id);
 			} else if (favorite_num == 3) {
 				System.out.println("--즐겨찾기한 필지조회--");
 				System.out.println("사용자 id 입력 : ");
 				member_id = sc.nextLine();
-				FavoriteTest.favoriteSelectFavorite(member_id);
+				FavoritePart.favoriteSelectFavorite(member_id);
 			} else if (favorite_num == 4) {
 				System.out.println("--즐겨찾기한 필지제거--");
 				System.out.println("사용자 id 입력 : ");
 				member_id = sc.nextLine();
 				System.out.println("즐겨찾에서 제거할 필지 id 입력");
 				parcel_id = sc.nextInt();
-				FavoriteTest.favoriteDeletetFavorite(member_id, parcel_id);
+				FavoritePart.favoriteDeletetFavorite(member_id, parcel_id);
 			} else if (favorite_num == 5) {
 				break;
 			} else
@@ -144,7 +145,7 @@ public class mainTest {
 			int parcel_num;
 			int parcel_id;
 			String address, geometry, pnu;
-			ParcelTest pt = new ParcelTest();
+			ParcelPart pt = new ParcelPart();
 			System.out.println(" 1 : 전체 필지 조회");
 			System.out.println(" 2 : 필지 추가");
 			System.out.println(" 3 : PNU값으로 필지조회");
@@ -155,7 +156,7 @@ public class mainTest {
 			sc.nextLine();
 			if (parcel_num == 1) {
 				System.out.println("--전체 필지 조회--");
-				ParcelTest.parcelSelectAll();
+				ParcelPart.parcelSelectAll();
 			} else if (parcel_num == 2) {
 				System.out.println("--필지 추가--");
 				System.out.println("필지 id 입력 : ");
@@ -172,12 +173,12 @@ public class mainTest {
 				System.out.println("--PNU값으로 필지조회--");
 				System.out.println("pnu 입력 : ");
 				pnu = sc.nextLine();
-				ParcelTest.parcelSelectByPnu(pnu);
+				ParcelPart.parcelSelectByPnu(pnu);
 			} else if (parcel_num == 4) {
 				System.out.println("--Adress값으로 필지검색--");
 				System.out.println("address 입력 : ");
 				address = sc.nextLine();
-				ParcelTest.parcelSelectByAdress(address);
+				ParcelPart.parcelSelectByAdress(address);
 			} else if (parcel_num == 5) {
 				break;
 			} else

@@ -5,7 +5,7 @@ import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 import org.json.simple.parser.ParseException;
 
-import kr.or.connect.preworkproject.main.ParcelTest;
+import kr.or.connect.preworkproject.main.ParcelPart;
 
 public class ParcelJsonData {
 	public static void main(String[] args) throws ParseException {
@@ -19,7 +19,7 @@ public class ParcelJsonData {
 			JSONParser parser = new JSONParser();
 			JSONObject jsonObj = (JSONObject) parser.parse(jsonStr);
 			JSONArray memberArray = (JSONArray) jsonObj.get("parcel");
-			ParcelTest pt = new ParcelTest();
+			ParcelPart pt = new ParcelPart();
 			for (int i = 0; i < memberArray.size(); i++) {
 				int k = 10;
 				JSONObject tempObj = (JSONObject) memberArray.get(i);

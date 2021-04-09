@@ -12,7 +12,7 @@ import kr.or.connect.preworkproject.dto.Favorite;
 import kr.or.connect.preworkproject.dto.Member;
 import kr.or.connect.preworkproject.dto.Parcel;
 
-public class FavoriteTest {
+public class FavoritePart {
 	static ApplicationContext ac = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 
 	static FavoriteDao favoriteDao = ac.getBean(FavoriteDao.class);

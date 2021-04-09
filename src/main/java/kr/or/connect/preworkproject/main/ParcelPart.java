@@ -9,7 +9,7 @@ import kr.or.connect.preworkproject.config.ApplicationConfig;
 import kr.or.connect.preworkproject.dao.ParcelDao;
 import kr.or.connect.preworkproject.dto.Parcel;
 
-public class ParcelTest {
+public class ParcelPart {
 	static ApplicationContext ac = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 
 	static ParcelDao parcelDao = ac.getBean(ParcelDao.class);
