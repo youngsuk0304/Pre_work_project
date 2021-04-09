@@ -9,8 +9,6 @@ import kr.or.connect.preworkproject.config.ApplicationConfig;
 import kr.or.connect.preworkproject.dao.FavoriteDao;
 import kr.or.connect.preworkproject.dao.MemberDao;
 import kr.or.connect.preworkproject.dto.Favorite;
-import kr.or.connect.preworkproject.dto.Member;
-import kr.or.connect.preworkproject.dto.Parcel;
 
 public class FavoritePart {
 	static ApplicationContext ac = new AnnotationConfigApplicationContext(ApplicationConfig.class);

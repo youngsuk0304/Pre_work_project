@@ -21,7 +21,6 @@ public class ParcelJsonData {
 			JSONArray memberArray = (JSONArray) jsonObj.get("parcel");
 			ParcelPart pt = new ParcelPart();
 			for (int i = 0; i < memberArray.size(); i++) {
-				int k = 10;
 				JSONObject tempObj = (JSONObject) memberArray.get(i);
 				int Id = Integer.parseInt(tempObj.get("id").toString());
 				String Address = tempObj.get("address").toString();

@@ -11,6 +11,7 @@ import kr.or.connect.preworkproject.config.ApplicationConfig;
 
 public class DataSourceTest {
 	public static void main(String[] args) {
+		@SuppressWarnings("resource")
 		ApplicationContext ac = new AnnotationConfigApplicationContext(ApplicationConfig.class);
 		DataSource ds = ac.getBean(DataSource.class);
 
