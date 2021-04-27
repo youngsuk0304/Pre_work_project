@@ -48,4 +48,5 @@ password : 'ys0304@'
 
 # DataBase 스키마
 
-![Spacewalk_DB](https://user-images.githubusercontent.com/33721972/113986169-e67eab00-9887-11eb-9658-719d958aa234.png)
+
+![Spacewalk_DB](https://user-images.githubusercontent.com/33721972/114120801-2dbc7880-9928-11eb-84b5-ae9236c561af.png)
